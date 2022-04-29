@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { myname } from './CreateContext';
-import Main2 from './Main2';
+import Main from './Main';
 
 function App(){
     //state
@@ -17,7 +17,7 @@ function App(){
             <myname.Provider value={name}>
                 <h1>useContext using Functional component</h1>
                 <h1>{value}</h1>
-                <Main2 value={name}/>
+                <Main value={name}/>
                 <button onClick={ ()=>setName("ankush") }>click me</button>
                 <button onClick={ ()=>setValue(value+1) }>Increment</button>
             </myname.Provider>
