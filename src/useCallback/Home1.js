@@ -4,25 +4,27 @@ import UseCallBack from '../useCallback/UseCallBack'
 
 export default function Home1() {
     const [value, setValue] = useState(100);
-    const [name , setName] = useState("ritik")
+    const [name, setName] = useState("ritik")
 
 
 
     //2.function defination
-    let changeName = useCallback(()=>{
+    let changeName = useCallback(() => {
         console.log('okok')
         setName("arjun")
-    },[name])
+    }, [name])
 
-    let increment = useCallback(() =>{
+    let increment = useCallback(() => {
+        console.log('okok222')
+
         setValue(value + 1)
-    },[value])
+    }, [value])
     return (
         <div>
             <h1>{value}</h1>
-            <button onClick={()=>{increment()}}>Increment</button>
-            <UseCallBack  name={name}/>
-            <button onClick={()=>{changeName()}}>dicrement</button>
+            <button onClick={() => { increment() }}>Increment</button>
+            <UseCallBack name={name} />
+            <button onClick={() => { changeName() }}>dicrement</button>
         </div>
     )
 }
